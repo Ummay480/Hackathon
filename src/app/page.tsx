@@ -1,15 +1,25 @@
-import HeroSection from "../components/HeroSection";
-import ProductSection from "../components/ProductSection";
-import BlogSection from "../components/BlogSection";
-import Footer from "../components/Footer";
+
+import HeroSection from "@/components/HeroSection";
+import ProductSection from "@/components/ProductSection";
+import BlogSection from "@/components/BlogSection";
+import NewArrival from "@/components/NewArrival";
+import ProductCard from '../components/ProductCard';
+
 
 const Home = () => {
   return (
     <div>
       <HeroSection />
-      <ProductSection />
+      <div className="min-h-screen bg-red-50 flex items-center justify-center">
+      <div className="grid grid-cols-2 gap-8">
+        <ProductCard title="Side table" imageSrc="/images/image-3.png" />
+        <ProductCard title="Side table" imageSrc="/images/image-17.png" />
+      </div>
+    </div>
+      <ProductSection />      
+      <NewArrival/>
       <BlogSection />
-      <Footer />
+      
     </div>
   );
 };

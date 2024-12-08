@@ -1,3 +1,5 @@
+"use client"
+import React from "react";
 import Image from "next/image";
 
 const ProductSection = () => {
@@ -13,7 +15,28 @@ const ProductSection = () => {
           {products.map((_, index) => (
             <div key={index} className="text-center">
               <Image
-                src="/product.png" // Replace with your actual image path
+                src="/images/image-10.png" // Replace with your actual image path
+                alt="Product"
+                width={200}
+                height={200}
+                className="mx-auto"
+              />
+              <Image
+                src="/images/image-11.png" // Replace with your actual image path
+                alt="Product"
+                width={200}
+                height={200}
+                className="mx-auto"
+              />
+              <Image
+                src="/images/image-9.png" // Replace with your actual image path
+                alt="Product"
+                width={200}
+                height={200}
+                className="mx-auto"
+              />
+              <Image
+                src="/images/image-8.png" // Replace with your actual image path
                 alt="Product"
                 width={200}
                 height={200}
