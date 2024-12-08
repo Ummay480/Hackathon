@@ -1,9 +1,32 @@
-"use client"
-import React from "react";
 import Image from "next/image";
 
 const ProductSection = () => {
-  const products = Array.from({ length: 4 });
+  const products = [
+    {
+      id: 1,
+      image: "/images/image-10.png", // Actual image path
+      name: "Tranton modular sofa_3",
+      price: "Rs. 25,000.00",
+    },
+    {
+      id: 2,
+      image: "/images/image-11.png",
+      name: "Granite dining table with dining chair",
+      price: "Rs. 25,000.00",
+    },
+    {
+      id: 3,
+      image: "/images/image-9.png",
+      name: "Outdoor bar table and stool",
+      price: "Rs. 25,000.00",
+    },
+    {
+      id: 4,
+      image: "/images/image-8.png",
+      name: "Plain console with teak mirror",
+      price: "Rs. 35,000.00",
+    },
+  ];
 
   return (
     <div className="bg-secondary py-16 px-4">
@@ -12,45 +35,27 @@ const ProductSection = () => {
           Top Picks For You
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
-          {products.map((_, index) => (
-            <div key={index} className="text-center">
+          {products.map((product) => (
+            <div key={product.id} className="text-center">
               <Image
-                src="/images/image-10.png" // Replace with your actual image path
-                alt="Product"
-                width={200}
-                height={200}
-                className="mx-auto"
-              />
-              <Image
-                src="/images/image-11.png" // Replace with your actual image path
-                alt="Product"
-                width={200}
-                height={200}
-                className="mx-auto"
-              />
-              <Image
-                src="/images/image-9.png" // Replace with your actual image path
-                alt="Product"
-                width={200}
-                height={200}
-                className="mx-auto"
-              />
-              <Image
-                src="/images/image-8.png" // Replace with your actual image path
-                alt="Product"
+                src={product.image} // Use product-specific image
+                alt={product.name}
                 width={200}
                 height={200}
                 className="mx-auto"
               />
               <h3 className="text-lg font-semibold text-accent mt-4">
-                Product Name
+                {product.name}
               </h3>
-              <p className="text-gray-500 mt-2">Rs. 25,000.00</p>
-              <button className="mt-4 px-4 py-2 bg-accent text-white rounded hover:bg-gray-800">
-                View More
-              </button>
+              <p className="text-gray-500 mt-2">{product.price}</p>
             </div>
           ))}
+        </div>
+        {/* Single "View More" Button */}
+        <div className="text-center text-xl font-semibold mt-8">
+          <button className="text-black underline hover:text-gray-700">
+            View More
+          </button>
         </div>
       </div>
     </div>

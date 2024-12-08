@@ -1,3 +1,4 @@
+"use client"
 import { useState } from "react";
 import CartHeader from "@/components/CartHeader";
 import ProductDetails from "@/components/CartProductDetails";
