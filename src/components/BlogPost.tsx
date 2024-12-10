@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface BlogPostProps {
   image: string;
@@ -27,9 +28,9 @@ const BlogPost: React.FC<BlogPostProps> = ({ image, category, date, title, descr
         </p>
         <h3 className="text-xl font-medium text-gray-800 mt-2">{title}</h3>
         <p className="text-gray-600 mt-2">{description}</p>
-        <a href="#" className="text-blue-500 hover:underline mt-4 block">
+        <Link href="#" className="text-blue-500 hover:underline mt-4 block">
           Read more
-        </a>
+        </Link>
       </div>
     </div>
   );

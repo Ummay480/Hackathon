@@ -10,7 +10,7 @@ const Header: React.FC<HeaderProps> = ({ title, breadcrumb }) => {
     <header className="bg-cover bg-center h-64 flex items-center justify-center" style={{ backgroundImage: "url('/path/to/header-bg.jpg')" }}>
       <div className="text-center">
         <h1 className="text-3xl font-semibold text-gray-800">{title}</h1>
-        <nav className="text-sm text-gray-500 mt-2">
+        <nav className="text-sm text-gray-500 mt-2 px-8">
           {breadcrumb.map((item, index) => (
             <span key={index}>
               <Link href={item.href}>{item.label}</Link>

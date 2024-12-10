@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import BlogPost from "@/components/BlogPost";
 import Sidebar from "@/components/Sidebar";
-import Footer from "@/components/Footer";
+
 
 const BlogPage = () => {
   return (
@@ -53,9 +53,6 @@ const BlogPage = () => {
           </nav>
         </div>
       </div>
-
-      {/* Footer */}
-      <Footer />
     </div>
   );
 };

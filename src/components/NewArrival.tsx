@@ -1,6 +1,7 @@
 "use client"; // Add this if client-side logic is needed (optional in this case)
 
-import React from 'react';
+import React from 'react'
+import Link from 'next/link';
 import Image from 'next/image';
 
 const NewArrival: React.FC = () => {
@@ -19,14 +20,19 @@ const NewArrival: React.FC = () => {
         </div>
 
         {/* Text Section */}
-        <div className="flex-1 text-center md:text-left mt-8 md:mt-0">
+        <div className="flex-1 text-center md:text-left mt-8 md:mt-0 items-center">
           <p className="text-gray-700 text-lg">New Arrivals</p>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mt-2">
             Asgaard Sofa
           </h1>
-          <button className="mt-6 px-6 py-2 border border-gray-800 text-gray-800 font-medium rounded hover:bg-gray-800 hover:text-white transition">
-            Order Now
-          </button>
+          <div className="mt-10">
+        <Link
+          href="/product"
+          className="inline-block px-6 py-2 border border-gray-800 text-gray-800 text-2xl font-normal rounded hover:bg-gray-800 hover:text-white transition"
+        >
+         Order Now
+        </Link>
+        </div>
         </div>
       </div>
     </section>

@@ -1,3 +1,5 @@
+
+import Link from "next/link";
 const ProductDetails = () => {
     return (
       <div className="lg:w-1/2">
@@ -49,9 +51,14 @@ const ProductDetails = () => {
               defaultValue={1}
               className="w-12 text-center border rounded-md"
             />
-            <button className="bg-black text-white py-2 px-6 rounded-md">
-              Add to Cart
-            </button>
+             <div className="mt-10">
+        <Link
+          href="/checkout"
+          className="inline-block px-6 py-2 underline border-gray-800 text-gray-800 text-2xl font-bold rounded hover:bg-gray-800 hover:text-white transition"
+        >
+          Add to cart
+        </Link>
+        </div>
           </div>
         </div>
       </div>

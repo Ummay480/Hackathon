@@ -32,14 +32,7 @@ const ProductPage = () => {
         {/* Related Products */}
         <RelatedProducts />
       </div>
-
-      {/* Footer */}
-      <footer className="bg-gray-100 text-center py-6 text-sm">
-        <div className="container mx-auto px-4">
-          <p>2022 Meubel House. All rights reserved</p>
-        </div>
-      </footer>
-    </div>
+   </div>
   );
 };
 
