@@ -44,7 +44,9 @@ const products = [
 
 const Shop = () => {
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 16;
+  const itemsPerPage1 = 16;
+  const itemsPerPage2 = 8;
+  const itemsPerPage3 = 8;
   const totalResults = products.length;
 
   const handlePageChange = (page: number) => {
@@ -54,18 +56,21 @@ const Shop = () => {
   return (
     <div>
       <Navbar />
-      <HeroBanner />
+      <HeroBanner title='Shop' />
       <ResultsFilter
         currentPage={currentPage}
-        itemsPerPage={itemsPerPage}
+        itemsPerPage1={itemsPerPage1}
+        itemsPerPage2={itemsPerPage2}
+        itemsPerPage3={itemsPerPage3}
         totalResults={totalResults}
       />
       <section className="max-w-7xl mx-auto px-4 py-0">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {products
             .slice(
-              (currentPage - 1) * itemsPerPage,
-              currentPage * itemsPerPage
+              (currentPage - 1) * itemsPerPage1,
+              currentPage * itemsPerPage2
+            
             )
             .map((product, index) => (
               <ProductCard2 key={index} {...product} />
@@ -73,7 +78,7 @@ const Shop = () => {
         </div>
         <Pagination
           currentPage={currentPage}
-          totalPages={Math.ceil(totalResults / itemsPerPage)}
+          totalPages={Math.ceil(totalResults / itemsPerPage1,)}
           onPageChange={handlePageChange}
         />
         <div className="bg-pink-50 py-8 border-t">

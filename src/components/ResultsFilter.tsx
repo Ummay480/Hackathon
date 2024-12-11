@@ -4,6 +4,10 @@ import { useState, useEffect } from "react";
 interface ResultsFilterProps {
   currentPage: number;
   totalResults: number;
+  itemsPerPage1:number;
+  itemsPerPage2:number; 
+  itemsPerPage3:number;
+
 }
 
 const ResultsFilter: React.FC<ResultsFilterProps> = ({
