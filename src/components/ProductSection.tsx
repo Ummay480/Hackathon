@@ -1,5 +1,6 @@
 "use client"
 import Image from "next/image";
+import Link from "next/link";
 
 const ProductSection = () => {
   const products = [
@@ -54,10 +55,12 @@ const ProductSection = () => {
         </div>
         {/* Single "View More" Button */}
         <div className="text-center text-xl font-semibold mt-8">
+        <Link href="/shop">
           <button className="text-black underline hover:text-gray-700">
             View More
           </button>
-        </div>
+        </Link>
+      </div>
       </div>
     </div>
   );

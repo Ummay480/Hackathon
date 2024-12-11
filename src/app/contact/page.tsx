@@ -117,10 +117,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-
-      <div className="bg-gray-100 py-4 text-center text-sm">
-        <p>&copy; Ummay Kulsoom. All rights reserved.</p>
-      </div>
     </div>
   );
 };
