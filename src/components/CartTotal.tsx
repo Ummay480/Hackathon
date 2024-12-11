@@ -1,3 +1,4 @@
+"use client"
 const CartTotals = () => (
     <div className="bg-gray-50 p-6 rounded-md shadow-sm">
       <h2 className="text-lg font-bold mb-4">Cart Totals</h2>

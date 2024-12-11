@@ -1,10 +1,11 @@
+"use client"
 import React, { useEffect, useState } from 'react';
 import Header from '@/components/CartHeader';
 import HeroBanner from '@/components/HeroBanner';
 import CartTable from '@/components/CartTable';
 import CartTotals from '@/components/CartTotal';
 
-const fetchCartItems = async (): Promise<{ id: number; name: string; price: number }[]> => {
+const fetchCartItems = async (): Promise<{ id: number; name: string; price: number; }[]> => {
   return new Promise((resolve) =>
     setTimeout(
       () =>
@@ -18,7 +19,7 @@ const fetchCartItems = async (): Promise<{ id: number; name: string; price: numb
 };
 
 const Cart: React.FC = () => {
-  const [cartItems, setCartItems] = useState<{ id: number; name: string; price: number }[] | undefined>(undefined);
+  const [cartItems, setCartItems] = useState<{ id: number; name: string; price: number; }[] | undefined>(undefined);
   const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {

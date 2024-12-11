@@ -1,3 +1,4 @@
+"use client"
 import React, { FC } from 'react';
 
 // Define a type for your cart items
@@ -5,6 +6,7 @@ type CartItem = {
   id: number;
   name: string;
   price: number;
+
 };
 
 // Define the props type for the CartTable component
