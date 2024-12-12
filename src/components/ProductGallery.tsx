@@ -5,7 +5,7 @@ import Image from "next/image";
 const ProductGallery: React.FC = () => {
   return (
     
-      <div className="flex flex-col lg:flex-row gap-6 mt-4 mb-40">
+      <div className="flex flex-col lg:flex-row gap-6 mt-4 mb-40 ml-4">
         {/* Thumbnail Images */}
         <div className="flex flex-col gap-4 items-start lg:w-1/5">
           {["image-28.png", "image-29.png", "image-30.png", "image-31.png"].map((image, index) => (

@@ -10,7 +10,7 @@ import Instagram from "@/components/Instagram";
 
 const Home = () => {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Navbar/>
       <HeroSection />
       <div className="min-h-screen bg-red-50 flex items-center justify-center">

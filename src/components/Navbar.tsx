@@ -36,10 +36,10 @@ const Navbar = () => {
           <Link href="/login">
           <FiUser className="text-lg hover:text-accent cursor-pointer" />
           </Link>
-          <Link href="/login">
+          <Link href="/wishlist">
           <FiHeart className="text-lg hover:text-accent cursor-pointer" />
           </Link>
-          <Link href="/login">
+          <Link href="/search">
           <FiSearch className="text-lg hover:text-accent cursor-pointer" />
           </Link>
           <Link href="/cart">
