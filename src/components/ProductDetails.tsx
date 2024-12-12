@@ -1,20 +1,23 @@
-"use client"
+"use client";
 import Link from "next/link";
+import SocialMedia from "./SocialMedia";
+
 const ProductDetails = () => {
-    return (
+  return (
+    <div className="absolute w-[606.01px] h-[730.87px] left-[690px] opacity-100 gap-0">
       <div className="lg:w-1/2">
         <h1 className="text-2xl font-semibold">Asgaard Sofa</h1>
         <p className="text-lg text-gray-500">Rs. 250,000.00</p>
-  
+
         <div className="flex items-center gap-2 mt-2">
           <div className="text-yellow-500">★★★★☆</div>
           <p className="text-sm text-gray-400">(5 Customer Reviews)</p>
         </div>
-  
-        <p className="mt-4 text-gray-700">
-          Setting the bar as one of the loudest speakers in its class...
+
+        <p className="mt-4 text-gray-700 text-sm font-normal">
+          Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound.
         </p>
-  
+
         {/* Size Selector */}
         <div className="mt-6">
           <h3 className="text-sm text-gray-500">Size</h3>
@@ -29,7 +32,7 @@ const ProductDetails = () => {
             ))}
           </div>
         </div>
-  
+
         {/* Color Selector */}
         <div className="mt-6">
           <h3 className="text-sm text-gray-500">Color</h3>
@@ -42,28 +45,29 @@ const ProductDetails = () => {
             ))}
           </div>
         </div>
-  
+
         {/* Add to Cart */}
-        <div className="mt-6">
+        <div className="mt-6 border-b-2 pb-6">  {/* Added border under the input */}
           <div className="flex gap-4 items-center">
             <input
               type="number"
               defaultValue={1}
-              className="w-12 text-center border rounded-md"
+              className="w-14 h-12 text-center border rounded-md"
             />
-             <div className="mt-10">
-        <Link
-          href="/checkout"
-          className="inline-block px-6 py-2 underline border-gray-800 text-gray-800 text-2xl font-bold rounded hover:bg-gray-800 hover:text-white transition"
-        >
-          Add to cart
-        </Link>
-        </div>
+            <div className="mt-2">
+              <Link
+                href="/cart"
+                className="px-6 py-2 text-gray-800 text-3xl font-normal rounded-md border-black border-2 hover:bg-gray-800 hover:text-white transition"
+              >
+                Add to cart
+              </Link>
+            </div>
           </div>
         </div>
+        <SocialMedia />
       </div>
-    );
-  };
-  
-  export default ProductDetails;
-  
+    </div>
+  );
+};
+
+export default ProductDetails;

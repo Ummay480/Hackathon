@@ -1,14 +1,15 @@
+"use client"
 import React from "react";
+import Navbar from "@/components/Navbar2";
+import HeroBanner from "@/components/HeroBanner";
 
 const Contact = () => {
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* Header */}
-      <div className="relative w-full h-64 bg-gray-200 flex items-center justify-center">
-        <h1 className="text-3xl font-semibold">Contact</h1>
-        <p className="absolute bottom-8 text-sm text-gray-500">
-          Home &gt; Contact
-        </p>
+      <div>
+        <Navbar/>
+        <HeroBanner title="Contact"/>
       </div>
 
       {/* Main Content */}

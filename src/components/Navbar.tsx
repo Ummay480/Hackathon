@@ -33,10 +33,18 @@ const Navbar = () => {
 
         {/* Icons */}
         <div className="hidden md:flex items-center space-x-4">
+          <Link href="/login">
           <FiUser className="text-lg hover:text-accent cursor-pointer" />
+          </Link>
+          <Link href="/login">
           <FiHeart className="text-lg hover:text-accent cursor-pointer" />
+          </Link>
+          <Link href="/login">
           <FiSearch className="text-lg hover:text-accent cursor-pointer" />
+          </Link>
+          <Link href="/cart">
           <FiShoppingCart className="text-lg hover:text-accent cursor-pointer" />
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}

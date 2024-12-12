@@ -1,4 +1,6 @@
+"use client"
 import React from "react";
+import Navbar from "@/components/Navbar2";
 import Breadcrumb from "@/components/Breadcrumb";
 import ProductGallery from "@/components/ProductGallery";
 import ProductDetails from "@/components/ProductDetails";
@@ -7,9 +9,11 @@ import RelatedProducts from "@/components/RelatedProducts";
 
 const ProductPage = () => {
   return (
-    <div className="bg-white text-gray-900">
-      <div className="container mx-auto px-4">
-        {/* Breadcrumb */}
+    <div className="bg-white text-gray-900"> 
+    <Navbar/>
+      <div className="container mx-auto w-full right-0 left-0 mb-6 text-lg active:font-semibold mt-4">
+       
+       {/* Breadcrumb */}
         <Breadcrumb
           items={[
             { label: "Home", href: "/" },
@@ -25,8 +29,7 @@ const ProductPage = () => {
           {/* Product Details */}
           <ProductDetails />
         </div>
-
-        {/* Tabs Section */}
+         {/* Tabs Section */}
         <Tabs />
 
         {/* Related Products */}

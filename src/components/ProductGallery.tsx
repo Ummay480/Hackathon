@@ -2,34 +2,37 @@
 import React from "react";
 import Image from "next/image";
 
-const ProductGallery = () => {
+const ProductGallery: React.FC = () => {
   return (
-    <div className="flex flex-col items-center lg:w-1/2">
-      {/* Main Image */}
-      <Image
-        src="/path/to/sofa.png"
-        alt="Asgaard Sofa"
-        className="w-full h-auto rounded-lg"
-        width={800}  // Set the appropriate width
-        height={600} // Set the appropriate height
-        layout="intrinsic"  // Optional: Adjust layout if necessary
-      />
-      
-      {/* Thumbnail Images */}
-      <div className="flex gap-2 mt-4">
-        {[1, 2, 3, 4].map((_, index) => (
+    
+      <div className="flex flex-col lg:flex-row gap-6 mt-4 mb-40">
+        {/* Thumbnail Images */}
+        <div className="flex flex-col gap-4 items-start lg:w-1/5">
+          {["image-28.png", "image-29.png", "image-30.png", "image-31.png"].map((image, index) => (
+            <Image
+              key={index}
+              src={`/images/${image}`}
+              alt={`Thumbnail ${index + 1}`}
+              className="w-16 h-16 object-cover rounded-lg border border-gray-200"
+              width={64}
+              height={64}
+            />
+          ))}
+        </div>
+
+        {/* Main Image */}
+        <div className="flex justify-center items-center lg:w-4/5 bg-amber-50 -ml-10">
           <Image
-            key={index}
-            src={`/path/to/sofa-thumbnail-${index + 1}.png`}
-            alt={`Thumbnail ${index + 1}`}
-            className="w-16 h-16 object-cover rounded-lg border border-gray-200"
-            width={64}   // Set width for thumbnail
-            height={64}  // Set height for thumbnail
-            layout="intrinsic"
+            src="/images/image18.png"
+            alt="Asgaard Sofa"
+            className="w-full h-auto rounded-lg py-10"
+            width={1000} // Increased width for the main image
+            height={1400} // Adjusted height for the main image
+            priority
           />
-        ))}
+        </div>
       </div>
-    </div>
+   
   );
 };
 

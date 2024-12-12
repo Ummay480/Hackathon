@@ -5,6 +5,7 @@ import ProductCard2 from '@/components/ProductCard2';
 import Navbar from "@/components/Navbar2";
 import ResultsFilter from '@/components/ResultsFilter';
 import Pagination from '@/components/Pagination'; // Import Pagination component
+import Promises from '@/components/Promises';
 
 const products = [
     { title: 'Trenton modular sofa', price: 'Rs. 25,000.00', image: '/images/image-7.png' },
@@ -81,21 +82,8 @@ const Shop = () => {
           totalPages={Math.ceil(totalResults / itemsPerPage1,)}
           onPageChange={handlePageChange}
         />
-        <div className="bg-pink-50 py-8 border-t">
-        <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div>
-            <h3 className="font-semibold">Free Delivery</h3>
-            <p className="text-sm text-gray-600">
-              For all orders over $50, consectetur adipiscing elit.
-            </p>
-          </div>
-          <div>
-            <h3 className="font-semibold">90 Days Return</h3>
-            <p className="text-sm text-gray-600">
-              If goods have problems, consectetur adipiscing elit.
-            </p>
-          </div>
-          </div>
+        <div className="w-full mx-auto px-4 py-0 left-0 right-0">
+          <Promises/>
           </div>
       </section>
     </div>
