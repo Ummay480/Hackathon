@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from "react";
-import CartSidebar from "@/componentsCartSidebar";
+import CartSidebar from "@/components/CartSidebar";
 
 const cart1 = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
