@@ -1,41 +1,30 @@
-"use client"
+"use client";
+
 import React, { useState } from "react";
-import CartSidebar from "@/components/CartSidebar";
+import CartSidebar from "@/components/CartSidebar"; // Adjust path based on your project structure
 
-const cart1 = () => {
-  const [isCartOpen, setIsCartOpen] = useState(false);
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: "Asgaard Sofa",
-      price: 250000,
-      quantity: 1,
-      image: "/images/image-18.png",
-    },
-    {
-      id: 2,
-      name: "Modern Chair",
-      price: 50000,
-      quantity: 2,
-      image: "/images/image-10.png",
-    },
-  ]);
+const Cart1 = () => {
+  const [isCartVisible, setCartVisible] = useState(false);
 
-  const handleRemoveItem = (id: number) => {
-    setCartItems((prevItems) => prevItems.filter((item) => item.id !== id));
-  };
+  const openCart = () => setCartVisible(true);
+  const closeCart = () => setCartVisible(false);
 
   return (
-    <>
-      <button onClick={() => setIsCartOpen(true)}>Open Cart</button>
-      <CartSidebar
-        isOpen={isCartOpen}
-        onClose={() => setIsCartOpen(false)}
-        cartItems={cartItems}
-        onRemoveItem={handleRemoveItem}
-      />
-    </>
+    <div className="relative h-screen">
+      {/* Main Content */}
+      <div className="flex justify-center items-center h-full">
+        <button
+          onClick={openCart}
+          className="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800"
+        >
+          Add to Cart
+        </button>
+      </div>
+
+      {/* Cart Sidebar */}
+      <CartSidebar isVisible={isCartVisible} onClose={closeCart} />
+    </div>
   );
 };
 
-export default cart1;
+export default Cart1;
