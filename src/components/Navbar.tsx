@@ -33,7 +33,7 @@ const Navbar = () => {
 
         {/* Icons */}
         <div className="hidden md:flex items-center space-x-4">
-          <Link href="/login">
+          <Link href="/my-account">
           <FiUser className="text-lg hover:text-accent cursor-pointer" />
           </Link>
           <Link href="/wishlist">

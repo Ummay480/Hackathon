@@ -44,12 +44,9 @@ const Navbar2 = () => {
             <FiSearch className="mr-2" />
           </Link>
           {/* Cart Icon */}
-          <button
-            onClick={() => setIsCartOpen(true)}
-            className="text-2xl hover:text-accent cursor-pointer flex items-center"
-          >
-            <FiShoppingCart className="mr-2" />
-          </button>
+          <Link href="/cart">
+          <FiShoppingCart className="text-lg hover:text-accent cursor-pointer" />
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}

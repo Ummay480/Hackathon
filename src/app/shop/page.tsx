@@ -69,7 +69,7 @@ const Shop: React.FC = () => {
         itemsPerPage3={itemsPerPage}
         totalResults={totalResults}
       />
-      <section className="max-w-7xl mx-auto px-4 py-0">
+      <section className="max-full mx-auto px-4 py-0">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {products
             .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
@@ -82,7 +82,7 @@ const Shop: React.FC = () => {
           totalPages={Math.ceil(totalResults / itemsPerPage)}
           onPageChange={handlePageChange}
         />
-        <div className="w-full mx-auto px-2 py-0 left-0 right-0">
+       <div className="w-full mx-auto px-2 py-0 left-0 right-0 -ml-6">
           <Promises />
         </div>
       </section>
