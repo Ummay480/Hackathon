@@ -6,7 +6,7 @@ import ProductGallery from "@/components/ProductGallery";
 import ProductDetails from "@/components/ProductDetails";
 import Tabs from "@/components/Tabs";
 import RelatedProducts from "@/components/RelatedProducts";
-import CartSidebar from "@/components/CartSidebar";
+
 
 const ProductPage = () => {
   return (
