@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import CartHeader from "@/components/CartHeader";
 import ProductDetails from "@/components/CartProductDetails";
 import RelatedProducts from "@/components/RelatedProducts";
 import CartSidebar from "@/components/CartSidebar";
@@ -26,10 +25,7 @@ const Product1Page: React.FC = () => {
 
   return (
     <div className="bg-gray-50">
-      {/* Header */}
-      <CartHeader />
-
-      {/* Main Content */}
+           {/* Main Content */}
       <main className="container mx-auto px-4 lg:px-8 py-12">
         <div className="flex flex-col lg:flex-row gap-12">
           {/* Product Details */}

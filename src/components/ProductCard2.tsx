@@ -1,49 +1,26 @@
-"use client";
-import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-
-interface ProductProps {
+interface ProductCard2Props {
   title: string;
   price: string;
   image: string;
-  width?: number;
-  height?: number;
-  onAddToCart?: () => void; // Add this prop
+  onAddToCart: () => void;
 }
 
-const ProductCard2: React.FC<ProductProps> = ({
-  title,
-  price,
-  image,
-  width = 200,
-  height = 200,
-  onAddToCart,
-}) => {
+const ProductCard2: React.FC<ProductCard2Props> = ({ title, price, image, onAddToCart }) => {
   return (
-    <div className="product-card p-4 border border-gray-200 rounded-lg shadow-md">
-      {/* Product Image */}
-      <Image
-        src={image}
-        alt={title}
-        width={width}
-        height={height}
-        className="object-cover rounded-lg"
-      />
-
-      {/* Product Details */}
-      <div className="mt-4">
-        <h3 className="font-bold text-lg">{title}</h3>
-        <p className="text-gray-500">{price}</p>
-      </div>
-
-      {/* Add to Cart Button */}
+    <div className="border rounded p-4 relative group">
+      <img src={image} alt={title} className="w-full h-40 object-cover" />
+      <h3 className="mt-2 text-lg font-semibold">{title}</h3>
+      <p className="text-gray-500">{price}</p>
+       <Link
+          href="/product">
       <button
         onClick={onAddToCart}
-        className="mt-4 bg-black text-white py-2 px-4 rounded hover:bg-gray-800 transition"
+        className="w-full mt-2 bg-black text-white py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
       >
         Add to Cart
       </button>
+      </Link>
     </div>
   );
 };

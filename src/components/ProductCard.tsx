@@ -19,7 +19,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, imageSrc }) => {
         height={400} // Set the appropriate height for the image
       />
       <h2 className="mt-4 text-lg font-medium">{title}</h2>
-      <Link href="#" className="mt-2 text-black-500 underline">
+      <Link href="/shop" className="mt-2 text-black-500 underline">
         View More
       </Link>
     </div>
