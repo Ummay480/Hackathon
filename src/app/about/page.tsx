@@ -25,7 +25,7 @@ const AboutPage = () => {
             <h2 className="text-3xl font-semibold text-gray-800 mb-4">Our Mission</h2>
             <p className="text-gray-600">
               Our mission is to deliver high-quality, handcrafted, and unique
-              products that bring joy and inspiration to our customers' lives.
+              products that bring joy and inspiration to our customers&apos;` lives.
               With a commitment to innovation and sustainability, we aim to
               create designs that stand the test of time.
             </p>

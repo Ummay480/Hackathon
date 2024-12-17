@@ -1,3 +1,7 @@
+"use client"
+import React from "react";
+
+
 const Tabs = () => {
   return (
     <div className="mt-12">

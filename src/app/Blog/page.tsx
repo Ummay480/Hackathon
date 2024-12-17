@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar2";
 import HeroBanner from "@/components/HeroBanner";
 import BlogPost from "@/components/BlogPost";
 import Sidebar from "@/components/Sidebar";
-import Pagination from "@/components/Pagination";
+import Promises from "@/components/Promises";
 
 
 const BlogPage = () => {
@@ -54,7 +54,8 @@ const BlogPage = () => {
             <button className="px-4 py-2 border rounded-md bg-amber-50 hover:bg-amber-100">1</button>
           </nav>
         </div>
-      </div>
+       </div>
+       <Promises/>
     </div>
   );
 };

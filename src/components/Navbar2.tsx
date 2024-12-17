@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { FiShoppingCart, FiUser, FiSearch, FiHeart } from "react-icons/fi";
-import CartSidebar from "@/components/CartSidebar"; // Adjust the import path if needed
+
 
 const Navbar2 = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -59,12 +59,12 @@ const Navbar2 = () => {
       </div>
 
       {/* Cart Sidebar */}
-      <CartSidebar
+      {/* <CartSidebar
         isOpen={isCartOpen}
         onClose={() => setIsCartOpen(false)}
         cartItems={[]} // Replace with actual cart items
         onRemoveItem={(id) => console.log("Remove item:", id)} // Add your remove logic
-      />
+      /> */}
     </header>
   );
 };

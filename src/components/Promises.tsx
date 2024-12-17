@@ -3,7 +3,7 @@ import React from "react";
 
 const Promises: React.FC = () => {
   return (
-    <div className="w-screen mx-auto bg-pink-50 py-8 border-t px-4">
+    <div className="w-screen mx-auto bg-pink-50 py-8 border-t px-10">
       <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6">
         <div>
           <h3 className="font-semibold">Free Delivery</h3>

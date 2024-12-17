@@ -10,7 +10,7 @@ const MyAccount = () => {
       <Navbar2 />
 
       {/* Hero Banner */}
-      <HeroBanner title="My Account" breadcrumb="Home > My Account" />
+      <HeroBanner title="My Account"/>
 
       {/* Login and Register Section */}
       <div className="max-w-7xl mx-auto px-6 py-12">

@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar2';
 import HeroBanner from '@/components/HeroBanner';
 import CartTable from '@/components/CartTable';
 import CartTotals from '@/components/CartTotal';
+import Promises from '@/components/Promises';
 
 const fetchCartItems = async (): Promise<{ id: number; name: string; price: number; }[]> => {
   return new Promise((resolve) =>
@@ -35,10 +36,10 @@ const Cart: React.FC = () => {
   }, []);
 
   return (
-    <div>
+    <div className='mx-auto'>
       <Navbar />
       <HeroBanner title="Cart" />
-      <main className="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <main className="max-w-7xl mx-auto px-10 py-16 grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2">
           {isLoading ? <p>Loading...</p> : <CartTable cartItems={cartItems} />}
         </div>
@@ -46,6 +47,8 @@ const Cart: React.FC = () => {
           <CartTotals />
         </div>
       </main>
+      <Promises/>
+
     </div>
   );
 };

@@ -1,13 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 interface ResultsFilterProps {
   currentPage: number;
   totalResults: number;
-  itemsPerPage1:number;
-  itemsPerPage2:number; 
-  itemsPerPage3:number;
-
+  itemsPerPage1: number;
+  itemsPerPage2: number;
+  itemsPerPage3: number;
 }
 
 const ResultsFilter: React.FC<ResultsFilterProps> = ({
@@ -17,7 +17,6 @@ const ResultsFilter: React.FC<ResultsFilterProps> = ({
   const [showCount, setShowCount] = useState(16);
 
   useEffect(() => {
-    // Adjust showCount based on currentPage
     if (currentPage === 1) {
       setShowCount(16);
     } else if (currentPage === 2) {
@@ -25,28 +24,33 @@ const ResultsFilter: React.FC<ResultsFilterProps> = ({
     } else if (currentPage === 3) {
       setShowCount(32);
     }
-  }, [currentPage]); // Recalculate when currentPage changes
+  }, [currentPage]);
 
-  // Determine how many products to show based on the page
   let startResult = 1;
   let endResult = 0;
 
   if (currentPage === 1) {
     startResult = 1;
-    endResult = Math.min(16, totalResults); // Show up to 16 products on the first page
+    endResult = Math.min(16, totalResults);
   } else if (currentPage === 2) {
     startResult = 17;
-    endResult = Math.min(24, totalResults); // Show the next 8 products on the second page
+    endResult = Math.min(24, totalResults);
   } else if (currentPage === 3) {
     startResult = 25;
-    endResult = Math.min(32, totalResults); // Show the next 8 products on the third page
+    endResult = Math.min(32, totalResults);
   }
 
   return (
     <div className="flex items-center justify-between bg-pink-50 p-4 px-24 my-10 rounded-md">
       {/* Left Section: Filter and View Options */}
       <div className="flex items-center gap-4">
-        <img src="images/image-23.png" alt="Icon" className="w-6 h-5" />
+        <Image
+          src="/images/image-23.png"
+          alt="Icon"
+          width={24}
+          height={20}
+          className="object-contain"
+        />
 
         <button className="flex items-center gap-0 text-gray-700 text-md">
           Filter
@@ -54,10 +58,22 @@ const ResultsFilter: React.FC<ResultsFilterProps> = ({
 
         <div className="flex gap-2 text-gray-500 text-sm font-normal">
           <button className="w-6 h-4 flex items-center justify-center">
-            <img src="images/image-24.png" alt="Grid View" className="w-6 h-6 ml-2" />
+            <Image
+              src="/images/image-24.png"
+              alt="Grid View"
+              width={24}
+              height={24}
+              className="object-contain ml-2"
+            />
           </button>
           <button className="w-6 h-4 flex items-center justify-center">
-            <img src="images/image-25.png" alt="List View" className="w-6 h-5 ml-6" />
+            <Image
+              src="/images/image-25.png"
+              alt="List View"
+              width={24}
+              height={20}
+              className="object-contain ml-6"
+            />
           </button>
         </div>
       </div>
