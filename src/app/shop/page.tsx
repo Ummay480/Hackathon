@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React from "react";
 import HeroBanner from "@/components/HeroBanner";
 import Navbar from "@/components/Navbar2";
 import ResultsFilter from "@/components/ResultsFilter";
