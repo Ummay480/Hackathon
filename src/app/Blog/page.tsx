@@ -5,7 +5,7 @@ import Sidebar from "@/components/Sidebar";
 import Promises from "@/components/Promises";
 
 
-const BlogPage = () => {
+const blogPage = () => {
   return (
     <div>
       <Navbar />
@@ -60,4 +60,4 @@ const BlogPage = () => {
   );
 };
 
-export default BlogPage;
+export default blogPage;
