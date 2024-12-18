@@ -1,73 +1,63 @@
 "use client";
-
+import React, { useState } from 'react';
 import HeroBanner from "@/components/HeroBanner";
 import Navbar from "@/components/Navbar2";
 import ResultsFilter from "@/components/ResultsFilter";
 import Promises from "@/components/Promises";
-import ProductList from "@/components/ProductList";
-import Pagination from "@/components/Pagination";
-import { useState } from "react";
+import ProductList from "@/components/ProductList"; // Import the new ProductList component
 
-// Product List
-const products = [
-  // Add a total of at least 32 products
-  { title: "Product 1", price: "$ 25,000", image: "/images/image-7.png" },
-  { title: "Product 2", price: "$ 25,000", image: "/images/image-2.png" },
-   { title: "Outdoor bar table", price: "$ 25,000.00", image: "/images/image-9.png" },
-  { title: "Plain console with teak mirror", price: "$ 25,000.00", image: "/images/image-8.png" },
-  { title: "Grain coffee table", price: "$ 15,000.00", image: "/images/image-6.png" },
-  { title: "Kent coffee table", price: "$ 225,000.00", image: "/images/image-5.png" },
-  { title: "Round coffee table", price: "$ 251,000.00", image: "/images/image-4.png" },
-  { title: "Reclaimed teak coffee table", price: "$ 25,200.00", image: "/images/image-22.png" },
-  { title: "Plain console", price: "$ 258,200.00", image: "/images/image-21.png" },
-  { title: "Reclaimed teak Sideboard", price: "$ 20,000.00", image: "/images/image-3.png" },
-  { title: "Bella chair and table", price: "$ 100,000.00", image: "/images/image-78.png" },
-  { title: "Product 1", price: "$ 25,000", image: "/images/image-7.png" },
-  { title: "Product 2", price: "$ 25,000", image: "/images/image-2.png" },
-   { title: "Outdoor bar table", price: "$ 25,000.00", image: "/images/image-9.png" },
-  { title: "Plain console with teak mirror", price: "$ 25,000.00", image: "/images/image-8.png" },
-  { title: "Grain coffee table", price: "$ 15,000.00", image: "/images/image-6.png" },
-  { title: "Kent coffee table", price: "$ 225,000.00", image: "/images/image-5.png" },
-  { title: "Round coffee table", price: "$ 251,000.00", image: "/images/image-4.png" },
-  { title: "Reclaimed teak coffee table", price: "$ 25,200.00", image: "/images/image-22.png" },
-  { title: "Product 1", price: "$ 25,000", image: "/images/image-7.png" },
-  { title: "Product 2", price: "$ 25,000", image: "/images/image-2.png" },
-   { title: "Outdoor bar table", price: "$ 25,000.00", image: "/images/image-9.png" },
-  { title: "Plain console with teak mirror", price: "$ 25,000.00", image: "/images/image-8.png" },
-  { title: "Grain coffee table", price: "$ 15,000.00", image: "/images/image-6.png" },
-  { title: "Kent coffee table", price: "$ 225,000.00", image: "/images/image-5.png" },
-  { title: "Round coffee table", price: "$ 251,000.00", image: "/images/image-4.png" },
-  { title: "Reclaimed teak coffee table", price: "$ 25,200.00", image: "/images/image-22.png" },
-  { title: "Kent coffee table", price: "$ 225,000.00", image: "/images/image-5.png" },
-  { title: "Round coffee table", price: "$ 251,000.00", image: "/images/image-4.png" },
-  { title: "Reclaimed teak coffee table", price: "$ 25,200.00", image: "/images/image-22.png" },
-  { title: "Plain console", price: "$ 258,200.00", image: "/images/image-21.png" },
-  { title: "Bella chair and table", price: "$ 100,000.00", image: "/images/image-78.png" },  
 
-];
+// Define the Product type
+interface Product {
+  id: number;
+  title: string;
+  price: string;
+  image: string;
+}
 
 const Shop: React.FC = () => {
-  // State for current page
-  const [currentPage, setCurrentPage] = useState(1);
-  const [cart, setCart] = useState<any[]>([]);
+  // Removing unused totalProducts, setCurrentPage, setItemsPerPage, setProducts
+  const [products,] = useState<Product[]>([
+    { id: 1, title: "Product 1", price: "$20", image: "/images/product1.jpg" },
+    { id: 2, title: "Product 2", price: "$30", image: "/images/product2.jpg" },
+    { id: 3, title: "Product 3", price: "$40", image: "/images/product3.jpg" },
+    { id: 4, title: "Product 4", price: "$25", image: "/images/product4.jpg" },
+    { id: 5, title: "Product 5", price: "$35", image: "/images/product5.jpg" },
+    { id: 6, title: "Product 6", price: "$50", image: "/images/product6.jpg" },
+    { id: 1, title: "Product 1", price: "$20", image: "/images/product1.jpg" },
+    { id: 2, title: "Product 2", price: "$30", image: "/images/product2.jpg" },
+    { id: 3, title: "Product 3", price: "$40", image: "/images/product3.jpg" },
+    { id: 4, title: "Product 4", price: "$25", image: "/images/product4.jpg" },
+    { id: 5, title: "Product 5", price: "$35", image: "/images/product5.jpg" },
+    { id: 6, title: "Product 6", price: "$50", image: "/images/product6.jpg" },
+    { id: 1, title: "Product 1", price: "$20", image: "/images/product1.jpg" },
+    { id: 2, title: "Product 2", price: "$30", image: "/images/product2.jpg" },
+    { id: 3, title: "Product 3", price: "$40", image: "/images/product3.jpg" },
+    { id: 4, title: "Product 4", price: "$25", image: "/images/product4.jpg" },
+    { id: 5, title: "Product 5", price: "$35", image: "/images/product5.jpg" },
+    { id: 6, title: "Product 6", price: "$50", image: "/images/product6.jpg" },
+    { id: 1, title: "Product 1", price: "$20", image: "/images/product1.jpg" },
+    { id: 2, title: "Product 2", price: "$30", image: "/images/product2.jpg" },
+    { id: 3, title: "Product 3", price: "$40", image: "/images/product3.jpg" },
+    { id: 4, title: "Product 4", price: "$25", image: "/images/product4.jpg" },
+    { id: 5, title: "Product 5", price: "$35", image: "/images/product5.jpg" },
+    { id: 6, title: "Product 6", price: "$50", image: "/images/product6.jpg" },
+    { id: 1, title: "Product 1", price: "$20", image: "/images/product1.jpg" },
+    { id: 2, title: "Product 2", price: "$30", image: "/images/product2.jpg" },
+    { id: 3, title: "Product 3", price: "$40", image: "/images/product3.jpg" },
+    { id: 4, title: "Product 4", price: "$25", image: "/images/product4.jpg" },
+    { id: 5, title: "Product 5", price: "$35", image: "/images/product5.jpg" },
+    { id: 6, title: "Product 6", price: "$50", image: "/images/product6.jpg" },
+    { id: 1, title: "Product 1", price: "$20", image: "/images/product1.jpg" },
+    { id: 2, title: "Product 2", price: "$30", image: "/images/product2.jpg" },
+    { id: 3, title: "Product 3", price: "$40", image: "/images/product3.jpg" },
+ 
+  ]);
 
-  // Define the items per page for each page
-  const itemsPerPage = [16, 8, 8];
-
-  // Function to handle page change
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
+  // Handle adding product to cart
+  const handleAddToCart = (product: Product) => {
+    console.log(`${product.title} added to cart`);
   };
-
-  // Function to handle adding products to the cart
-  const handleAddToCart = (product: any) => {
-    setCart((prevCart) => [...prevCart, product]);
-  };
-
-  // Calculate the index range of products for the current page
-  const startIndex = itemsPerPage.slice(0, currentPage - 1).reduce((acc, val) => acc + val, 0);
-  const endIndex = startIndex + itemsPerPage[currentPage - 1];
-  const currentProducts = products.slice(startIndex, endIndex);
 
   return (
     <div>
@@ -79,27 +69,18 @@ const Shop: React.FC = () => {
 
       {/* Results Filter */}
       <ResultsFilter
-        currentPage={currentPage}
-        itemsPerPage1={itemsPerPage[0]}
-        itemsPerPage2={itemsPerPage[1]}
-        itemsPerPage3={itemsPerPage[2]}
-        totalResults={products.length}
+        currentPage={1} // Set a default page (or calculate dynamically)
+        itemsPerPage1={16} // Example items per page, you can dynamically adjust this
+        itemsPerPage2={24}
+        itemsPerPage3={32}
+        totalResults={products.length} // Pass the length of the products array
       />
 
-     {/* Main Content Section */}
-     <section className="max-w-screen-xl mx-auto px-4 py-8">
+<section className="max-full mx-auto px-4 py-0">
         {/* Product List */}
-        <ProductList products={currentProducts} onAddToCart={handleAddToCart} />
-
-        {/* Pagination */}
-        <Pagination
-          currentPage={currentPage}
-          totalPages={itemsPerPage.length}
-          onPageChange={handlePageChange}
-        />
-
-        {/* Promises Section */}
-        <div className="w-full px-2 py-4">
+        <ProductList products={products} onAddToCart={handleAddToCart} />
+  
+        <div className="w-full mx-auto px-2 py-0 left-0 right-0 -ml-6">
           <Promises />
         </div>
       </section>
