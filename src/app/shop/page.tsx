@@ -11,7 +11,7 @@ import { useState } from "react";
 // Product List
 const products = [
   // Add a total of at least 32 products
-  { title: "Product 1", price: "$ 25,000", image: "/images/image-1.png" },
+  { title: "Product 1", price: "$ 25,000", image: "/images/image-7.png" },
   { title: "Product 2", price: "$ 25,000", image: "/images/image-2.png" },
    { title: "Outdoor bar table", price: "$ 25,000.00", image: "/images/image-9.png" },
   { title: "Plain console with teak mirror", price: "$ 25,000.00", image: "/images/image-8.png" },
@@ -22,7 +22,7 @@ const products = [
   { title: "Plain console", price: "$ 258,200.00", image: "/images/image-21.png" },
   { title: "Reclaimed teak Sideboard", price: "$ 20,000.00", image: "/images/image-3.png" },
   { title: "Bella chair and table", price: "$ 100,000.00", image: "/images/image-18.png" },
-  { title: "Product 1", price: "$ 25,000", image: "/images/image-1.png" },
+  { title: "Product 1", price: "$ 25,000", image: "/images/image-7.png" },
   { title: "Product 2", price: "$ 25,000", image: "/images/image-2.png" },
    { title: "Outdoor bar table", price: "$ 25,000.00", image: "/images/image-9.png" },
   { title: "Plain console with teak mirror", price: "$ 25,000.00", image: "/images/image-8.png" },
@@ -30,7 +30,7 @@ const products = [
   { title: "Kent coffee table", price: "$ 225,000.00", image: "/images/image-5.png" },
   { title: "Round coffee table", price: "$ 251,000.00", image: "/images/image-4.png" },
   { title: "Reclaimed teak coffee table", price: "$ 25,200.00", image: "/images/image-22.png" },
-  { title: "Product 1", price: "$ 25,000", image: "/images/image-1.png" },
+  { title: "Product 1", price: "$ 25,000", image: "/images/image-7.png" },
   { title: "Product 2", price: "$ 25,000", image: "/images/image-2.png" },
    { title: "Outdoor bar table", price: "$ 25,000.00", image: "/images/image-9.png" },
   { title: "Plain console with teak mirror", price: "$ 25,000.00", image: "/images/image-8.png" },
