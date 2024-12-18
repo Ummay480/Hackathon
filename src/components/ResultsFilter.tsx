@@ -4,10 +4,10 @@ import Image from "next/image";
 
 interface ResultsFilterProps {
   currentPage: number;
-  totalResults: number;
   itemsPerPage1: number;
   itemsPerPage2: number;
   itemsPerPage3: number;
+  totalResults: number;
 }
 
 const ResultsFilter: React.FC<ResultsFilterProps> = ({
