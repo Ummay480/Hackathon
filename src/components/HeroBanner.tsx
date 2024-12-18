@@ -29,7 +29,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({ title }) => (
     </div>
 
     <div className="text-center mt-8">
-      <h1 className="text-7xl font-bold text-gray-800 mt-6">{title}</h1>
+      <h1 className="text-4xl font-bold text-gray-800 mt-6">{title}</h1>
       <p className="text-gray-800 text-2xl font-semibold mt-6 flex items-center justify-center gap-2">
       <Link href="/">Home</Link>
         <IoIosArrowForward />

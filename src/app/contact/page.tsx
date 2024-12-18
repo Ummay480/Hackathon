@@ -5,7 +5,7 @@ import HeroBanner from "@/components/HeroBanner";
 
 const Contact = () => {
   return (
-    <div className="bg-gray-50 text-gray-800">
+    <div className="bg-gray-50 text-gray-800 overflow-x-hidden">
       {/* Header */}
       <div>
         <Navbar/>

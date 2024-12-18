@@ -13,7 +13,7 @@ const ProductCard2: React.FC<ProductCard2Props> = ({ title, price, image, onAddT
       <h3 className="mt-2 text-lg font-semibold">{title}</h3>
       <p className="text-gray-500">{price}</p>
        <Link
-          href="/product">
+          href="/cart">
       <button
         onClick={onAddToCart}
         className="w-full mt-2 bg-black text-white py-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300"

@@ -35,9 +35,8 @@ const Product1Page: React.FC = () => {
 
       {/* Related Products */}
       <RelatedProducts />
-
-      {/* Cart Sidebar */}
-      <CartSidebar
+{/* Cart Sidebar */}
+<CartSidebar
         isOpen={isCartOpen}
         onClose={() => setIsCartOpen(false)}
         cartItems={cartItems}

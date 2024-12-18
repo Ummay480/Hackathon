@@ -4,25 +4,102 @@ import HeroBanner from "@/components/HeroBanner";
 import Navbar from "@/components/Navbar2";
 import ResultsFilter from "@/components/ResultsFilter";
 import Promises from "@/components/Promises";
-import ProductList from "@/components/ProductList"; // Import the new ProductList component
+import ProductList from "@/components/ProductList";
+import Pagination from "@/components/Pagination";
+import { useState } from "react";
+
+// Product List
+const products = [
+  // Add a total of at least 32 products
+  { title: "Product 1", price: "$ 25,000", image: "/images/image-7.png" },
+  { title: "Product 2", price: "$ 25,000", image: "/images/image-2.png" },
+   { title: "Outdoor bar table", price: "$ 25,000.00", image: "/images/image-9.png" },
+  { title: "Plain console with teak mirror", price: "$ 25,000.00", image: "/images/image-8.png" },
+  { title: "Grain coffee table", price: "$ 15,000.00", image: "/images/image-6.png" },
+  { title: "Kent coffee table", price: "$ 225,000.00", image: "/images/image-5.png" },
+  { title: "Round coffee table", price: "$ 251,000.00", image: "/images/image-4.png" },
+  { title: "Reclaimed teak coffee table", price: "$ 25,200.00", image: "/images/image-22.png" },
+  { title: "Plain console", price: "$ 258,200.00", image: "/images/image-21.png" },
+  { title: "Reclaimed teak Sideboard", price: "$ 20,000.00", image: "/images/image-3.png" },
+  { title: "Bella chair and table", price: "$ 100,000.00", image: "/images/image-78.png" },
+  { title: "Product 1", price: "$ 25,000", image: "/images/image-7.png" },
+  { title: "Product 2", price: "$ 25,000", image: "/images/image-2.png" },
+   { title: "Outdoor bar table", price: "$ 25,000.00", image: "/images/image-9.png" },
+  { title: "Plain console with teak mirror", price: "$ 25,000.00", image: "/images/image-8.png" },
+  { title: "Grain coffee table", price: "$ 15,000.00", image: "/images/image-6.png" },
+  { title: "Kent coffee table", price: "$ 225,000.00", image: "/images/image-5.png" },
+  { title: "Round coffee table", price: "$ 251,000.00", image: "/images/image-4.png" },
+  { title: "Reclaimed teak coffee table", price: "$ 25,200.00", image: "/images/image-22.png" },
+  { title: "Product 1", price: "$ 25,000", image: "/images/image-7.png" },
+  { title: "Product 2", price: "$ 25,000", image: "/images/image-2.png" },
+   { title: "Outdoor bar table", price: "$ 25,000.00", image: "/images/image-9.png" },
+  { title: "Plain console with teak mirror", price: "$ 25,000.00", image: "/images/image-8.png" },
+  { title: "Grain coffee table", price: "$ 15,000.00", image: "/images/image-6.png" },
+  { title: "Kent coffee table", price: "$ 225,000.00", image: "/images/image-5.png" },
+  { title: "Round coffee table", price: "$ 251,000.00", image: "/images/image-4.png" },
+  { title: "Reclaimed teak coffee table", price: "$ 25,200.00", image: "/images/image-22.png" },
+  { title: "Kent coffee table", price: "$ 225,000.00", image: "/images/image-5.png" },
+  { title: "Round coffee table", price: "$ 251,000.00", image: "/images/image-4.png" },
+  { title: "Reclaimed teak coffee table", price: "$ 25,200.00", image: "/images/image-22.png" },
+  { title: "Plain console", price: "$ 258,200.00", image: "/images/image-21.png" },
+  { title: "Bella chair and table", price: "$ 100,000.00", image: "/images/image-78.png" },  
+
+];
 
 const Shop: React.FC = () => {
-  const totalProducts = 100; // Assuming you have the total number of products
+  // State for current page
+  const [currentPage, setCurrentPage] = useState(1);
+  const [cart, setCart] = useState<any[]>([]);
+
+  // Define the items per page for each page
+  const itemsPerPage = [16, 8, 8];
+
+  // Function to handle page change
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
+  // Function to handle adding products to the cart
+  const handleAddToCart = (product: any) => {
+    setCart((prevCart) => [...prevCart, product]);
+  };
+
+  // Calculate the index range of products for the current page
+  const startIndex = itemsPerPage.slice(0, currentPage - 1).reduce((acc, val) => acc + val, 0);
+  const endIndex = startIndex + itemsPerPage[currentPage - 1];
+  const currentProducts = products.slice(startIndex, endIndex);
 
   return (
     <div>
+      {/* Navbar */}
       <Navbar />
+
+      {/* Hero Banner */}
       <HeroBanner title="Shop" />
+
+      {/* Results Filter */}
       <ResultsFilter
-        currentPage={1}
-        itemsPerPage1={16}
-        itemsPerPage2={8}
-        itemsPerPage3={8}
-        totalResults={totalProducts}
+        currentPage={currentPage}
+        itemsPerPage1={itemsPerPage[0]}
+        itemsPerPage2={itemsPerPage[1]}
+        itemsPerPage3={itemsPerPage[2]}
+        totalResults={products.length}
       />
-      <section className="max-full mx-auto px-4 py-0">
-        <ProductList /> {/* Render the product list here */}
-        <div className="w-full mx-auto px-2 py-0 left-0 right-0 -ml-6">
+
+     {/* Main Content Section */}
+     <section className="max-w-screen-xl mx-auto px-4 py-8">
+        {/* Product List */}
+        <ProductList products={currentProducts} onAddToCart={handleAddToCart} />
+
+        {/* Pagination */}
+        <Pagination
+          currentPage={currentPage}
+          totalPages={itemsPerPage.length}
+          onPageChange={handlePageChange}
+        />
+
+        {/* Promises Section */}
+        <div className="w-full px-2 py-4">
           <Promises />
         </div>
       </section>

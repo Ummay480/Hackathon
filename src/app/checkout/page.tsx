@@ -6,7 +6,7 @@ import HeroBanner from '@/components/HeroBanner';
 
 const Checkout: React.FC = () => {
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-100 overflow-x-hidden">
       {/* Header */}
       <Navbar/>
       <HeroBanner title='Checkout'/>

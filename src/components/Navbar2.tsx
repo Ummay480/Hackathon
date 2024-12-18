@@ -6,7 +6,7 @@ import { FiShoppingCart, FiUser, FiSearch, FiHeart } from "react-icons/fi";
 
 
 const Navbar2 = () => {
-  const [isCartOpen, setIsCartOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header className="bg-white text-gray-800 shadow-md">
@@ -33,17 +33,16 @@ const Navbar2 = () => {
         </nav>
 
         {/* Icons */}
-        <div className="hidden md:flex items-center space-x-6">
-          <Link href="/my-account" className="text-2xl hover:text-accent cursor-pointer flex items-center">
-            <FiUser className="mr-2" />
+        <div className="hidden md:flex items-center space-x-4">
+          <Link href="/my-account">
+          <FiUser className="text-lg hover:text-accent cursor-pointer" />
           </Link>
-          <Link href="/wishlist" className="text-2xl hover:text-accent cursor-pointer flex items-center">
-            <FiHeart className="mr-2" />
+          <Link href="/wishlist">
+          <FiHeart className="text-lg hover:text-accent cursor-pointer" />
           </Link>
-          <Link href="/search" className="text-2xl hover:text-accent cursor-pointer flex items-center">
-            <FiSearch className="mr-2" />
+          <Link href="/search">
+          <FiSearch className="text-lg hover:text-accent cursor-pointer" />
           </Link>
-          {/* Cart Icon */}
           <Link href="/cart">
           <FiShoppingCart className="text-lg hover:text-accent cursor-pointer" />
           </Link>
@@ -52,19 +51,37 @@ const Navbar2 = () => {
         {/* Mobile Menu Button */}
         <button
           className="md:hidden text-gray-800"
-          onClick={() => setIsCartOpen(!isCartOpen)}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           ☰
         </button>
       </div>
 
-      {/* Cart Sidebar */}
-      {/* <CartSidebar
-        isOpen={isCartOpen}
-        onClose={() => setIsCartOpen(false)}
-        cartItems={[]} // Replace with actual cart items
-        onRemoveItem={(id) => console.log("Remove item:", id)} // Add your remove logic
-      /> */}
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="bg-primary md:hidden">
+          <nav className="flex flex-col space-y-2 p-4">
+            <Link href="/" className="block text-gray-800 hover:text-accent">
+              Home
+            </Link>
+            <Link href="/shop" className="block text-gray-800 hover:text-accent">
+              Shop
+            </Link>
+            <Link href="/about" className="block text-gray-800 hover:text-accent">
+              About
+            </Link>
+            <Link href="/contact" className="block text-gray-800 hover:text-accent">
+              Contact
+            </Link>
+          </nav>
+          <div className="flex items-center space-x-4 p-4">
+            <FiUser className="text-lg hover:text-accent cursor-pointer" />
+            <FiHeart className="text-lg hover:text-accent cursor-pointer" />
+            <FiSearch className="text-lg hover:text-accent cursor-pointer" />
+            <FiShoppingCart className="text-lg hover:text-accent cursor-pointer" />
+          </div>
+        </div>
+      )}
     </header>
   );
 };

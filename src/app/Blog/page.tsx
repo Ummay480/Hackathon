@@ -11,7 +11,7 @@ const BlogPage = () => {
       <Navbar />
       <HeroBanner title="Blog" />
 
-      <div className="container mx-auto px-4 lg:px-8 py-12">
+      <div className="container mx-auto px-4 lg:px-8 py-12 overflow-x-hidden">
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Blog Posts */}
           <div className="w-full lg:w-3/4">

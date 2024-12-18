@@ -1,13 +1,25 @@
-"use client"
+"use client";
 import React from "react";
-import Link from "next/link"; // Import Link from next/link
-import Image from "next/image"; // Import Image from next/image
+import Link from "next/link";
+import Image from "next/image";
 
 interface ProductDetailsProps {
   onCartOpen: () => void;
+  onAddToCart: (item: { id: string; name: string; price: number; quantity: number }) => void;
 }
 
-const CartProductDetails: React.FC<ProductDetailsProps> = ({ onCartOpen }) => {
+const CartProductDetails: React.FC<ProductDetailsProps> = ({ onCartOpen, onAddToCart }) => {
+  const handleAddToCart = () => {
+    const newItem = {
+      id: "1", // Example ID
+      name: "Asgaard Sofa", // Example name
+      price: 250000, // Example price
+      quantity: 1, // Default quantity
+    };
+    onAddToCart(newItem);
+    onCartOpen();
+  };
+
   return (
     <div className="lg:w-3/4">
       {/* Breadcrumb */}
@@ -30,8 +42,8 @@ const CartProductDetails: React.FC<ProductDetailsProps> = ({ onCartOpen }) => {
             src="/path/to/product-image.jpg"
             alt="Product Image"
             className="w-full h-96 object-cover rounded-md"
-            width={640} // Set the width
-            height={384} // Set the height
+            width={640}
+            height={384}
           />
           <div className="flex gap-4 mt-4">
             {[1, 2, 3, 4].map((_, i) => (
@@ -40,8 +52,8 @@ const CartProductDetails: React.FC<ProductDetailsProps> = ({ onCartOpen }) => {
                 src="/path/to/thumbnail.jpg"
                 alt={`Thumbnail ${i}`}
                 className="w-16 h-16 object-cover rounded-md cursor-pointer"
-                width={64} // Set the width for the thumbnail
-                height={64} // Set the height for the thumbnail
+                width={64}
+                height={64}
               />
             ))}
           </div>
@@ -52,9 +64,7 @@ const CartProductDetails: React.FC<ProductDetailsProps> = ({ onCartOpen }) => {
           <h2 className="text-2xl font-semibold mb-2">Asgaard Sofa</h2>
           <p className="text-gray-600 mb-2">Rs. 250,000.00</p>
           <div className="flex items-center gap-2 mb-4">
-            <div className="flex text-yellow-400">
-              {Array(5).fill("⭐")}
-            </div>
+            <div className="flex text-yellow-400">{Array(5).fill("⭐")}</div>
             <span className="text-sm text-gray-500">(5 Customer Reviews)</span>
           </div>
           <p className="text-gray-700 mb-6">
@@ -85,10 +95,15 @@ const CartProductDetails: React.FC<ProductDetailsProps> = ({ onCartOpen }) => {
 
           {/* Add to Cart */}
           <div className="flex items-center gap-4">
-            <input type="number" defaultValue={1} min={1} className="w-12 border text-center rounded-md" />
+            <input
+              type="number"
+              defaultValue={1}
+              min={1}
+              className="w-12 border text-center rounded-md"
+            />
             <button
               className="px-6 py-2 bg-black text-white rounded-md hover:bg-gray-800"
-              onClick={onCartOpen}
+              onClick={handleAddToCart}
             >
               Add To Cart
             </button>
