@@ -1,4 +1,6 @@
+"use client"
 import Link from "next/link";
+import Image from "next/image";
 interface ProductCard2Props {
   title: string;
   price: string;
@@ -9,7 +11,7 @@ interface ProductCard2Props {
 const ProductCard2: React.FC<ProductCard2Props> = ({ title, price, image, onAddToCart }) => {
   return (
     <div className="border rounded p-4 relative group">
-      <img src={image} alt={title} className="w-full h-40 object-cover" />
+      <Image src={image} alt={title} className="w-full h-40 object-cover" />
       <h3 className="mt-2 text-lg font-semibold">{title}</h3>
       <p className="text-gray-500">{price}</p>
        <Link
