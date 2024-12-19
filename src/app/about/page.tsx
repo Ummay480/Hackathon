@@ -102,18 +102,18 @@ const AboutPage = () => {
               name: "Alex Brown",
               feedback:
                 "Absolutely love the craftsmanship and attention to detail. Highly recommended!",
-              img: "/images/testimonial1.jpg",
+              Image: "/images/image-52.jpg",
             },
             {
               name: "Jessica Lee",
               feedback:
                 "The products are unique and of excellent quality. Customer service was fantastic!",
-              img: "/images/testimonial2.jpg",
+              Image: "/images/image-51.jpg",
             },
           ].map((testimonial, index) => (
             <div key={index} className="flex items-center gap-4 bg-white shadow p-6 rounded-lg">
               <Image
-                src={testimonial.img}
+                src={testimonial.Image}
                 alt={testimonial.name}
                 className="rounded-full object-cover"
                 width={60}
