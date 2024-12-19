@@ -9,11 +9,11 @@ const Navbar2 = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   return (
-    <header className="bg-white text-gray-800 shadow-md">
+    <header className="bg-white text-gray-800 hover:text-#b88e2f shadow-md">
       <div className="max-w-7xl mx-auto py-4 flex items-center justify-between px-20 text-xl">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-accent">
-          Luxe-Living
+        <Link href="/" className="text-2xl font-bold text-accent text-yellow-600">
+        Meubel-House
         </Link>
 
         {/* Desktop Links */}
@@ -48,7 +48,7 @@ const Navbar2 = () => {
 
           {/* Conditional Search Input */}
           {isSearchOpen && (
-            <div className="absolute top-full mt-2 bg-white text-black">
+            <div className="absolute top-full mt-2 bg-white text-black ">
               <input
                 type="text"
                 placeholder="Search..."

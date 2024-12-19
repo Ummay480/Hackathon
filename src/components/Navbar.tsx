@@ -12,7 +12,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto py-4 flex items-center justify-between px-20">
         {/* Logo */}
         <Link href="/" className="text-2xl font-bold text-accent">
-        Luxe-Living
+        Meubel-House
         </Link>
 
         {/* Desktop Links */}
