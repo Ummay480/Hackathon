@@ -69,11 +69,7 @@ const Shop: React.FC = () => {
   const endIndex = startIndex + itemsPerPage[currentPage - 1];
   const currentProducts = products.slice(startIndex, endIndex);
 
-  // Function to handle adding a product to the cart
-  const handleAddToCart = (product: Product) => {
-    console.log("Product added to cart:", product);
-    // Implement cart logic here
-  };
+  
 
   return (
     <div>
