@@ -9,7 +9,7 @@ const Navbar2 = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   return (
-    <header className="bg-white text-gray-800 hover:text-#b88e2f shadow-md">
+    <header className="bg-white text-gray-800 hover:text-yellow-600 shadow-md">
       <div className="max-w-7xl mx-auto py-4 flex items-center justify-between px-20 text-xl">
         {/* Logo */}
         <Link href="/" className="text-2xl font-bold text-accent text-yellow-600">

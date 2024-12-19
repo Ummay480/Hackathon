@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const NewArrival: React.FC = () => {
   return (
-    <section className="bg-amber-50 h-screen flex items-center">
+    <section className="bg-amber-50 h-screen md:h-[800px] sm:h-[600px] flex items-center">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between gap-16 px-4">
         {/* Image Section */}
         <div className="flex-1">
