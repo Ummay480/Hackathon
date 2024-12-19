@@ -11,12 +11,12 @@ const Navbar = () => {
     <header className="bg-amber-100 text-gray-800 shadow-md">
       <div className="max-w-7xl mx-auto py-4 flex items-center justify-between px-20">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-accent">
+        <Link href="/" className="text-2xl font-bold text-accent text-yellow-600">
         Meubel-House
         </Link>
 
         {/* Desktop Links */}
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden md:flex space-x-8 text-xl">
           <Link href="/" className="hover:text-accent">
             Home
           </Link>
@@ -34,15 +34,15 @@ const Navbar = () => {
         {/* Icons */}
         <div className="hidden md:flex items-center space-x-4">
           <Link href="/my-account">
-          <FiUser className="text-lg hover:text-accent cursor-pointer" />
+          <FiUser className="text-2xl hover:text-accent cursor-pointer" />
           </Link>
           <Link href="/wishlist">
-          <FiHeart className="text-lg hover:text-accent cursor-pointer" />
+          <FiHeart className="text-2xl hover:text-accent cursor-pointer" />
           </Link>
          {/* Search Block */}
         <div className="relative">
           <button onClick={() => setIsSearchOpen(!isSearchOpen)}>
-            <FiSearch className="w-6 h-4" />
+            <FiSearch className="text-2xl" />
           </button>
 
           {/* Conditional Search Input */}
@@ -58,7 +58,7 @@ const Navbar = () => {
           )}
  </div>
           <Link href="/cart">
-          <FiShoppingCart className="text-lg hover:text-accent cursor-pointer" />
+          <FiShoppingCart className="text-2xl hover:text-accent cursor-pointer" />
           </Link>
         </div>
 
