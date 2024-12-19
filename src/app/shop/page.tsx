@@ -63,6 +63,12 @@ const Shop: React.FC = () => {
   const endIndex = startIndex + itemsPerPage[currentPage - 1];
   const currentProducts = products.slice(startIndex, endIndex);
 
+  // Function to handle adding a product to the cart
+  const handleAddToCart = (product: Product) => {
+    console.log("Product added to cart:", product);
+    // Implement cart logic here
+  };
+
   return (
     <div>
       {/* Navbar */}
@@ -83,7 +89,7 @@ const Shop: React.FC = () => {
       {/* Main Content Section */}
       <section className="max-w-screen-xl mx-auto px-4 py-8">
         {/* Product List */}
-        <ProductList products={currentProducts} />
+        <ProductList products={currentProducts}>
 
         {/* Pagination */}
         <Pagination
