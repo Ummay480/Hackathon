@@ -8,11 +8,7 @@ import ProductList from "@/components/ProductList";
 import Pagination from "@/components/Pagination";
 import { useState } from "react";
 
-type Product = {
-  title: string;
-  price: string;
-  image: string;
-};
+
 
 // Product List
 const products = [
