@@ -48,7 +48,7 @@ const BlogSection = () => {
         {/* Corrected Link without <a> */}
         <div className="mt-10">
         <Link
-          href="/blog"
+          href="/Blog"
           className="inline-block px-6 py-2 underline border-gray-800 text-gray-800 text-2xl font-bold rounded hover:bg-gray-800 hover:text-white transition"
         >
           View All
