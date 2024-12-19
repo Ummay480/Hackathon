@@ -1,8 +1,9 @@
-"use client";
-import React, { useState } from "react";
-import { FaTrashAlt } from "react-icons/fa";
+"use client"
+import React, {useState } from 'react';
+import Navbar from '@/components/Navbar2';
+import HeroBanner from '@/components/HeroBanner';
 import Image from "next/image"; // Import the Image component
-
+import { IoTrashOutline } from "react-icons/io5";
 interface WishlistItem {
   id: number;
   name: string;
@@ -37,6 +38,10 @@ const WishlistPage: React.FC = () => {
   };
 
   return (
+    <div className='mx-auto'>
+      <Navbar />
+      <HeroBanner title="Wish List" />
+   
     <div className="container mx-auto p-6 bg-gray-100 min-h-screen">
       <div className="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg">
         <h2 className="text-2xl font-semibold text-center mb-6">Your Wishlist</h2>
@@ -71,12 +76,13 @@ const WishlistPage: React.FC = () => {
                     onClick={() => handleRemoveItem(item.id)}
                     className="text-red-500 hover:text-red-700"
                   >
-                    <FaTrashAlt className="w-5 h-5" />
+                    <IoTrashOutline className="w-5 h-5" />
                   </button>
                 </div>
               </div>
             ))}
           </div>
+          
         )}
 
         {/* Wishlist Summary */}
@@ -92,7 +98,9 @@ const WishlistPage: React.FC = () => {
               </button>
             </div>
           </div>
+          
         )}
+      </div>
       </div>
     </div>
   );
