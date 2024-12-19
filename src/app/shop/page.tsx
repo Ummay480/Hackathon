@@ -8,6 +8,12 @@ import ProductList from "@/components/ProductList";
 import Pagination from "@/components/Pagination";
 import { useState } from "react";
 
+type Product = {
+  title: string;
+  price: string;
+  image: string;
+};
+
 // Product List
 const products = [
   // Add a total of at least 32 products
@@ -89,7 +95,7 @@ const Shop: React.FC = () => {
       {/* Main Content Section */}
       <section className="max-w-screen-xl mx-auto px-4 py-8">
         {/* Product List */}
-        <ProductList products={products} />;
+        <ProductList products={currentProducts} />
 
         {/* Pagination */}
         <Pagination
@@ -108,5 +114,4 @@ const Shop: React.FC = () => {
 };
 
 export default Shop;
-
 
