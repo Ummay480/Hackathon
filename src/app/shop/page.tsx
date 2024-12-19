@@ -89,7 +89,7 @@ const Shop: React.FC = () => {
       {/* Main Content Section */}
       <section className="max-w-screen-xl mx-auto px-4 py-8">
         {/* Product List */}
-        <ProductList products={currentProducts}>
+        <ProductList products={products} />;
 
         {/* Pagination */}
         <Pagination

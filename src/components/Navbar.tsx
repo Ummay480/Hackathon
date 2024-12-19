@@ -6,7 +6,7 @@ import { FiShoppingCart, FiUser, FiSearch, FiHeart } from "react-icons/fi";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   return (
     <header className="bg-amber-100 text-gray-800 shadow-md">
       <div className="max-w-7xl mx-auto py-4 flex items-center justify-between px-20">
@@ -39,9 +39,24 @@ const Navbar = () => {
           <Link href="/wishlist">
           <FiHeart className="text-lg hover:text-accent cursor-pointer" />
           </Link>
-          <Link href="/search">
-          <FiSearch className="text-lg hover:text-accent cursor-pointer" />
-          </Link>
+         {/* Search Block */}
+        <div className="relative">
+          <button onClick={() => setIsSearchOpen(!isSearchOpen)}>
+            <FiSearch className="w-6 h-4" />
+          </button>
+
+          {/* Conditional Search Input */}
+          {isSearchOpen && (
+            <div className="absolute top-full mt-2 bg-white text-black">
+              <input
+                type="text"
+                placeholder="Search..."
+                className="px-1 py-1 rounded border-2 focus:outline-1"
+                onBlur={() => setIsSearchOpen(false)} // Close input when focus is lost
+              />
+            </div>
+          )}
+ </div>
           <Link href="/cart">
           <FiShoppingCart className="text-lg hover:text-accent cursor-pointer" />
           </Link>
