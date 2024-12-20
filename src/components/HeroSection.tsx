@@ -14,7 +14,7 @@ const HeroSection = () => {
                           alt="Logo"
                           width={120}
                           height={120}
-                          className="mx-auto -ml-0 sm:hidden"
+                          className="mx-auto -ml-0 hidden sm:block"
                         />
           <h1 className="text-4xl font-bold text-accent">
             Rocket Single Seater
