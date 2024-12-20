@@ -3,16 +3,23 @@
 import { useState } from "react";
 import Link from "next/link";
 import { FiShoppingCart, FiUser, FiSearch, FiHeart } from "react-icons/fi";
+import Image from "next/image";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   return (
     <header className="bg-amber-100 text-gray-800 shadow-md">
-      <div className="max-w-7xl mx-auto py-4 flex items-center justify-between px-20">
+      <div className="max-w-7xl mx-auto py-0 flex items-center justify-between px-20">
         {/* Logo */}
         <Link href="/" className="text-2xl font-bold text-accent text-yellow-600">
-        Meubel-House
+        <Image
+                src="/images/logo.png"
+                alt="Logo"
+                width={120}
+                height={120}
+                className="mx-auto"
+              />
         </Link>
 
         {/* Desktop Links */}

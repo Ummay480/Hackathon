@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { FiShoppingCart, FiUser, FiSearch, FiHeart } from "react-icons/fi";
+import Image from "next/image";
 
 
 const Navbar2 = () => {
@@ -10,10 +11,16 @@ const Navbar2 = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   return (
     <header className="bg-white text-gray-800 hover:text-yellow-600 shadow-md">
-      <div className="max-w-7xl mx-auto py-4 flex items-center justify-between px-20 text-xl">
+      <div className="max-w-7xl mx-auto py-0 flex items-center justify-between px-20 text-xl">
         {/* Logo */}
         <Link href="/" className="text-2xl font-bold text-accent text-yellow-600">
-        Meubel-House
+        <Image
+                src="/images/logo.png"
+                alt="Logo"
+                width={120}
+                height={120}
+                className="mx-auto"
+              />
         </Link>
 
         {/* Desktop Links */}
@@ -35,15 +42,15 @@ const Navbar2 = () => {
         {/* Icons */}
         <div className="hidden md:flex items-center space-x-4">
           <Link href="/my-account">
-          <FiUser className="text-lg hover:text-accent cursor-pointer" />
+          <FiUser className="text-2xl hover:text-accent cursor-pointer" />
           </Link>
           <Link href="/wishlist">
-          <FiHeart className="text-lg hover:text-accent cursor-pointer" />
+          <FiHeart className="text-2xl hover:text-accent cursor-pointer" />
           </Link>
         {/* Search Block */}
         <div className="relative">
           <button onClick={() => setIsSearchOpen(!isSearchOpen)}>
-            <FiSearch className="w-6 h-4" />
+            <FiSearch className="text-2xl" />
           </button>
 
           {/* Conditional Search Input */}
@@ -59,7 +66,7 @@ const Navbar2 = () => {
           )}
             </div>
           <Link href="/cart">
-          <FiShoppingCart className="text-lg hover:text-accent cursor-pointer" />
+          <FiShoppingCart className="text-2xl hover:text-accent cursor-pointer" />
           </Link>
         </div>
 
