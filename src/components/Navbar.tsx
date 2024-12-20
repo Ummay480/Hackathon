@@ -16,8 +16,8 @@ const Navbar = () => {
   <Image
     src="/images/logo.png"
     alt="Logo"
-    width={80} // Adjust for smaller devices
-    height={80} // Adjust for smaller devices
+    width={60} // Adjust for smaller devices
+    height={60} // Adjust for smaller devices
     className="mx-auto sm:w-20 sm:h-20" // Apply small size for small screens
   />
   <div className="-mt-4 sm:-mt-2 text-center">MEUBLE HOUSE</div>
