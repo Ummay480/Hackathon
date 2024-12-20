@@ -12,18 +12,17 @@ const Navbar = () => {
     <header className="bg-amber-100 text-gray-800 shadow-md">
       <div className="max-w-7xl mx-auto py-0 flex items-center justify-between px-20">
        {/* Logo */}
-<Link href="/" className="text-lg sm:text-base font-bold text-accent text-yellow-600">
+<Link href="/" className="text-mlg sm:text-sm font-normal text-accent text-yellow-600">
   <Image
     src="/images/logo.png"
     alt="Logo"
     width={60} // Adjust for smaller devices
     height={60} // Adjust for smaller devices
-    className="mx-auto sm:w-20 sm:h-20" // Apply small size for small screens
+    className="mx-auto sm:w-20 sm:h-20 unerline" // Apply small size for small screens
   />
-  <div className="-mt-4 sm:-mt-2 text-center">MEUBLE HOUSE</div>
+  <div className="border-t-2 border-yellow-600 w-20 mx-auto -mt-5"></div>
+  <div className="py-3 sm:-mt-2 text-md sm:tex-sm text-center">MEUBLE HOUSE</div>
 </Link>
-
-             
 
         {/* Desktop Links */}
         <nav className="hidden md:flex space-x-8 text-xl">
