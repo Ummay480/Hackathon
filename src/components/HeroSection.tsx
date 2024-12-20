@@ -9,6 +9,13 @@ const HeroSection = () => {
     <div className="w-full h-screen md:h-[800px] sm:h-[600px] bg-amber-100 py-4 px-10 sm:px-2 md:px-4">
       <div className="max-w-7xl flex flex-col lg:flex-row items-center justify-between mx-20">
         <div className="text-center lg:text-left">
+          <Image
+                          src="/images/logo.png"
+                          alt="Logo"
+                          width={120}
+                          height={120}
+                          className="mx-auto -ml-0"
+                        />
           <h1 className="text-4xl font-bold text-accent">
             Rocket Single Seater
           </h1>

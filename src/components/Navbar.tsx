@@ -12,7 +12,7 @@ const Navbar = () => {
     <header className="bg-amber-100 text-gray-800 shadow-md">
       <div className="max-w-7xl mx-auto py-0 flex items-center justify-between px-20">
         {/* Logo */}
-        <Link href="/" className="text-2xl font-bold text-accent text-yellow-600">
+        <Link href="/" className="text-LG font-bold text-accent text-yellow-600">
         <Image
                 src="/images/logo.png"
                 alt="Logo"
@@ -20,7 +20,9 @@ const Navbar = () => {
                 height={120}
                 className="mx-auto"
               />
-        </Link>
+               <div className="-mt-8">MEUBLE HOUSE</div>
+              </Link>
+             
 
         {/* Desktop Links */}
         <nav className="hidden md:flex space-x-8 text-xl">
